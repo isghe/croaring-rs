@@ -13,6 +13,7 @@ fn main() {
         .compile("libroaring.a");
 
     let bindings = bindgen::Builder::default()
+        .clang_arg("-I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include")
         .blacklist_type("max_align_t")
         .header("CRoaring/roaring.h")
         .generate_inline_functions(true)
